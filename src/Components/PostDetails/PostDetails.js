@@ -3,18 +3,17 @@ import styles from '../PostList/PostList.module.css'
 import axios from 'axios'
 import moment from 'moment'
 import AddBlog from '../AddBlog/AddBlog'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-
 const PostDetails = () => {
   const { postBox, dummyImg, inputBox, parentDiv } = styles
   const [getResponse, setResponse] = useState()
   const [showEdit, setShowEdit] = useState(false)
   const [comment, setComment] = useState('')
   const [getComments, setComments] = useState()
-  const Detailsurl = new URL(window.location.href)
-  const postId = Detailsurl.searchParams.get('postId')
+  const location = useLocation()
+  const postId = location.state.params
 
   //get post details based on ID
   useEffect(() => {
@@ -58,7 +57,6 @@ const PostDetails = () => {
         `https://60334e6aa223790017ad019e.mockapi.io/api/v1/posts/${postId}/comments/${commentId}`,
       )
       .then((res) => {
-        console.log(res)
         toast?.error('Comment Deleted!')
         setTimeout(() => {
           window.location.reload(false)

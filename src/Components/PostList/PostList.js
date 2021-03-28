@@ -2,19 +2,20 @@ import React, { useState, useEffect, Fragment } from 'react'
 import styles from './PostList.module.css'
 import axios from 'axios'
 import moment from 'moment'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import AddBlog from '../AddBlog/AddBlog'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 function PostList() {
+  let { postsId } = useParams()
   const { postBox, dummyImg, cursorClass } = styles
   const [showEdit, setShowEdit] = useState(false)
   const [postData, setPostData] = useState([])
   const [postId, setPostId] = useState('')
   let history = useHistory()
-  function handleClick(postId) {
-    history.push(`/post?postId=${postId}`)
+  function handleClick(postsId) {
+    history.push(`/post/`, { params: postsId })
   }
 
   //get list of posts
