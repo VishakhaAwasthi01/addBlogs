@@ -85,6 +85,7 @@ function AddBlog({ setShow, showEdit, setShowEdit, postId }) {
               name="blogUrl"
               className={`w-100 ${inputBox} px-2`}
               value={imageUrl}
+              placeholder={'Image URL'}
               onChange={(e) => setImageUrl(e.target.value)}
             />
             <input
@@ -92,6 +93,7 @@ function AddBlog({ setShow, showEdit, setShowEdit, postId }) {
               name="title"
               className={`w-100 ${inputBox} mt-3 px-2`}
               value={title}
+              placeholder={'Title'}
               onChange={(e) => setTitle(e.target.value)}
             />
             <textarea
@@ -100,6 +102,7 @@ function AddBlog({ setShow, showEdit, setShowEdit, postId }) {
               className={`w-100 ${inputBox} mt-3 px-2 py-2`}
               style={{ minHeight: '100px' }}
               value={description}
+              placeholder={'Description'}
               onChange={(e) => setDescription(e.target.value)}
             />
             <div className="d-flex">

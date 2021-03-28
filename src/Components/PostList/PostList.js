@@ -84,7 +84,7 @@ function PostList() {
                   {moment(each?.updatedAt).format('MMMM Do YYYY, h:mm:ss a')}
                 </p>
                 <p>{each?.description}</p>
-                <div className="d-flex">
+                <div className="d-lg-flex">
                   <div className="">
                     <p
                       className={`${cursorClass}`}
@@ -94,7 +94,7 @@ function PostList() {
                     </p>
                   </div>
                   {each?.userId === '73' && (
-                    <div className="d-flex ml-auto">
+                    <div className="d-flex flex-wrap ml-auto">
                       <button
                         type="submit"
                         className="btn px-4"
