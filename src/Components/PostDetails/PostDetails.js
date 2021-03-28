@@ -51,7 +51,7 @@ const PostDetails = () => {
         `https://60334e6aa223790017ad019e.mockapi.io/api/v1/posts/${postId}/comments/${commentId}`,
       )
       .then((res) => {
-        window.location.reload(false)
+        // window.location.reload(false)
       })
       .catch((error) => {})
   }
