@@ -39,15 +39,15 @@ function AddBlog({ setShow, showEdit, setShowEdit, postId }) {
   //update existing post
   const updatePost = (e) => {
     e.preventDefault()
-    const udateData = {
+    const updateData = {
       imageUrl,
       title,
       description,
     }
     axios
       .put(
-        `https://60334e6aa223790017ad019e.mockapi.io/api/v1/posts/${'73'}`,
-        udateData,
+        `https://60334e6aa223790017ad019e.mockapi.io/api/v1/posts/73`,
+        updateData,
       )
       .then((res) => {
         toast?.success('Post Updated Successfully!')
