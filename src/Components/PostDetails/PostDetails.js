@@ -25,6 +25,8 @@ const PostDetails = () => {
         console.log(error)
       })
   }, [postId])
+
+  //add new comment
   const addComment = (e, postId) => {
     e.preventDefault()
     const body = {
@@ -40,6 +42,8 @@ const PostDetails = () => {
       })
       .catch((error) => {})
   }
+
+  //delete any comment
   const deleteComment = (e, postId, commentId) => {
     e.preventDefault()
     axios
@@ -51,6 +55,8 @@ const PostDetails = () => {
       })
       .catch((error) => {})
   }
+
+  //get all comments
   useEffect(() => {
     axios
       .get(

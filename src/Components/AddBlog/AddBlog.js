@@ -10,6 +10,7 @@ function AddBlog({ setShow, showEdit, setShowEdit, postId }) {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
 
+  //add new post
   const addPost = (e) => {
     e.preventDefault()
     const postData = {
@@ -33,6 +34,8 @@ function AddBlog({ setShow, showEdit, setShowEdit, postId }) {
         setShow(false)
       })
   }
+
+  //update existing post
   const updatePost = (e) => {
     e.preventDefault()
     const udateData = {
@@ -56,6 +59,8 @@ function AddBlog({ setShow, showEdit, setShowEdit, postId }) {
         setShowEdit(false)
       })
   }
+
+  //get values for editing post
   useEffect(() => {
     axios
       .get(`https://60334e6aa223790017ad019e.mockapi.io/api/v1/posts/${postId}`)

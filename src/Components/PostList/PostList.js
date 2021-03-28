@@ -3,7 +3,6 @@ import styles from './PostList.module.css'
 import axios from 'axios'
 import moment from 'moment'
 import { useHistory } from 'react-router-dom'
-
 import AddBlog from '../AddBlog/AddBlog'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -17,6 +16,8 @@ function PostList() {
   function handleClick(postId) {
     history.push(`/post?postId=${postId}`)
   }
+
+  //get list of posts
   useEffect(() => {
     axios
       .get(
@@ -31,7 +32,6 @@ function PostList() {
   }, [])
 
   //delete post function
-
   const deletePost = (e, postId) => {
     e.preventDefault()
     axios
