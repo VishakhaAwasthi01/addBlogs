@@ -11,10 +11,10 @@ const PostDetails = () => {
   const [showEdit, setShowEdit] = useState(false)
   const [comment, setComment] = useState('')
   const [getComments, setComments] = useState()
-
   const Detailsurl = new URL(window.location.href)
   const postId = Detailsurl.searchParams.get('postId')
 
+  //get post details based on ID
   useEffect(() => {
     axios
       .get(`https://60334e6aa223790017ad019e.mockapi.io/api/v1/posts/${postId}`)
