@@ -44,7 +44,9 @@ function PostList() {
           window.location.reload(false)
         }, 1000)
       })
-      .catch((error) => {})
+      .catch((error) => {
+        console.log(error)
+      })
   }
 
   return (

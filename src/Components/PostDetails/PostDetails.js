@@ -45,7 +45,9 @@ const PostDetails = () => {
           window.location.reload(false)
         }, 1000)
       })
-      .catch((error) => {})
+      .catch((error) => {
+        console.log(error)
+      })
   }
 
   //delete any comment
@@ -56,12 +58,15 @@ const PostDetails = () => {
         `https://60334e6aa223790017ad019e.mockapi.io/api/v1/posts/${postId}/comments/${commentId}`,
       )
       .then((res) => {
+        console.log(res)
         toast?.error('Comment Deleted!')
         setTimeout(() => {
           window.location.reload(false)
         }, 1000)
       })
-      .catch((error) => {})
+      .catch((error) => {
+        console.log(error)
+      })
   }
 
   //get all comments
@@ -77,6 +82,7 @@ const PostDetails = () => {
         console.log(error)
       })
   }, [postId])
+
   let history = useHistory()
   function handleClick() {
     history.push(`/`)
@@ -86,7 +92,7 @@ const PostDetails = () => {
       <ToastContainer />
       <div className={` ${parentDiv} mx-auto`}>
         <div className="row">
-          <button class="btn" onClick={handleClick}>
+          <button className="btn" onClick={handleClick}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width={20}

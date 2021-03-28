@@ -32,6 +32,7 @@ function AddBlog({ setShow, showEdit, setShowEdit, postId }) {
       })
       .catch((error) => {
         setShow(false)
+        console.log(error)
       })
   }
 
@@ -56,6 +57,7 @@ function AddBlog({ setShow, showEdit, setShowEdit, postId }) {
         }, 1000)
       })
       .catch((error) => {
+        console.log(error)
         setShowEdit(false)
       })
   }
