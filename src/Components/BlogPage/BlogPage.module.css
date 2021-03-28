@@ -1,0 +1,11 @@
+.parentDiv {
+  width: 50%;
+}
+.addBtn {
+  width: 150px;
+}
+@media (max-width: 576px) {
+  .parentDiv {
+    width: 95%;
+  }
+}

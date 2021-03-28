@@ -1,0 +1,32 @@
+.postBox {
+  box-shadow: 5px 5px 5px 5px #e8e8e8;
+  border-radius: 10px;
+  background-color: white;
+  padding: 20px 5px 10px 5px;
+}
+.cursorClass {
+  cursor: pointer;
+}
+.parentDiv {
+  width: 50%;
+}
+.dummyImg {
+  width: 90%;
+  height: 200px;
+  margin: auto;
+  text-align: center;
+}
+button {
+  width: 100px;
+  float: right;
+}
+.inputBox {
+  border: 1px solid #bbb5b5;
+  height: 50px;
+  border-radius: 10px;
+}
+@media (max-width: 576px) {
+  .parentDiv {
+    width: 95%;
+  }
+}
