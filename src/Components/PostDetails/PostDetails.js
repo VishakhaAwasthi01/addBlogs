@@ -4,6 +4,8 @@ import axios from 'axios'
 import moment from 'moment'
 import AddBlog from '../AddBlog/AddBlog'
 import { useHistory } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const PostDetails = () => {
   const { postBox, dummyImg, inputBox, parentDiv } = styles
@@ -38,7 +40,10 @@ const PostDetails = () => {
         body,
       )
       .then((res) => {
-        window.location.reload(false)
+        toast?.success('Comment Added Successfully!')
+        setTimeout(() => {
+          window.location.reload(false)
+        }, 1000)
       })
       .catch((error) => {})
   }
@@ -51,7 +56,10 @@ const PostDetails = () => {
         `https://60334e6aa223790017ad019e.mockapi.io/api/v1/posts/${postId}/comments/${commentId}`,
       )
       .then((res) => {
-        // window.location.reload(false)
+        toast?.error('Comment Deleted!')
+        setTimeout(() => {
+          window.location.reload(false)
+        }, 1000)
       })
       .catch((error) => {})
   }
